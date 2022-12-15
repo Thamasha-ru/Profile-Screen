@@ -17,7 +17,7 @@ class _EditProfileState extends State<EditProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-            padding: EdgeInsets.only(left: 15, top: 60, right: 15),
+            padding: EdgeInsets.only(left: 15, top: 40, right: 15),
             child: GestureDetector(
               onTap: () {
                 FocusScope.of(context).unfocus();
@@ -60,12 +60,17 @@ class _EditProfileState extends State<EditProfile> {
                     ],
                   ),
                 ),
-                SizedBox(height: 40),
-                buildTextField("Full Name", "Demon", false),
+                SizedBox(height: 30),
+                buildTextField(
+                  "Full Name",
+                  "Demon",
+                  false,
+                ),
+                buildTextField("NIC", "985341879V", false),
                 buildTextField("Email", "Demon97@gmail.com", false),
                 buildTextField("Password", "********", true),
                 buildTextField("location", "Sri Lanka", false),
-                SizedBox(height: 45),
+                SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -115,7 +120,7 @@ class _EditProfileState extends State<EditProfile> {
                       onPressed: () {
                         setState(() {
                           //isObscurePasswordTextField =
-                          //!isObscurePasswordTextField;
+                          // !isObscurePasswordTextField;
                         });
                       })
                   : null,
