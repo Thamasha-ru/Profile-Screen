@@ -6,7 +6,7 @@ class EditProfile extends StatefulWidget {
   _EditProfileState createState() => _EditProfileState();
 }
 
-get child => null;
+//get child => null;
 
 class _EditProfileState extends State<EditProfile> {
   get isObscurePasswordTextField => true;
@@ -17,7 +17,7 @@ class _EditProfileState extends State<EditProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-            padding: EdgeInsets.only(left: 15, top: 50, right: 15),
+            padding: EdgeInsets.only(left: 15, top: 60, right: 15),
             child: GestureDetector(
               onTap: () {
                 FocusScope.of(context).unfocus();
@@ -45,13 +45,13 @@ class _EditProfileState extends State<EditProfile> {
                           bottom: 0,
                           right: 0,
                           child: Container(
-                            height: 50,
-                            width: 50,
+                            height: 45,
+                            width: 45,
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 border:
                                     Border.all(width: 4, color: Colors.white),
-                                color: Colors.blue),
+                                color: Colors.greenAccent),
                             child: Icon(
                               Icons.edit,
                               color: Colors.white,
@@ -60,12 +60,12 @@ class _EditProfileState extends State<EditProfile> {
                     ],
                   ),
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 40),
                 buildTextField("Full Name", "Demon", false),
                 buildTextField("Email", "Demon97@gmail.com", false),
                 buildTextField("Password", "********", true),
                 buildTextField("location", "Sri Lanka", false),
-                SizedBox(height: 30),
+                SizedBox(height: 45),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -73,26 +73,28 @@ class _EditProfileState extends State<EditProfile> {
                       onPressed: () {},
                       child: Text("CANCEL",
                           style: TextStyle(
-                              fontSize: 15,
+                              fontSize: 18,
                               letterSpacing: 2,
                               color: Colors.black)),
                       style: OutlinedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(horizontal: 50),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20))),
+                              borderRadius: BorderRadius.circular(30))),
                     ),
                     ElevatedButton(
                         onPressed: () {},
                         child: Text("UPDATE",
                             style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 18,
                                 letterSpacing: 2,
                                 color: Colors.white)),
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
-                          padding: EdgeInsets.symmetric(horizontal: 50),
+                          primary: Colors.greenAccent,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
+                              borderRadius: BorderRadius.circular(30)),
                         ))
                   ],
                 )
