@@ -6,9 +6,10 @@ class EditProfile extends StatefulWidget {
   _EditProfileState createState() => _EditProfileState();
 }
 
-//get child => null;
+get child => null;
 
 class _EditProfileState extends State<EditProfile> {
+  set isObscurePasswordTextField(_EditProfileState) => true;
   get isObscurePasswordTextField => true;
 
   get isPasswordTextField => true;
@@ -119,8 +120,8 @@ class _EditProfileState extends State<EditProfile> {
                       icon: Icon(Icons.remove_red_eye, color: Colors.grey),
                       onPressed: () {
                         setState(() {
-                          //isObscurePasswordTextField =
-                          // !isObscurePasswordTextField;
+                          isObscurePasswordTextField =
+                              !isObscurePasswordTextField;
                         });
                       })
                   : null,
