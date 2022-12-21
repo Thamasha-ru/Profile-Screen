@@ -6,19 +6,19 @@ class EditProfile extends StatefulWidget {
   _EditProfileState createState() => _EditProfileState();
 }
 
-get child => null;
+//get child => null;
 
 class _EditProfileState extends State<EditProfile> {
-  set isObscurePasswordTextField(_EditProfileState) => true;
-  get isObscurePasswordTextField => true;
+  // set isObscurePasswordTextField(_EditProfileState) => true;
+  // get isObscurePasswordTextField => true;
 
-  get isPasswordTextField => true;
+  get isPasswordTextField => false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-            padding: EdgeInsets.only(left: 15, top: 40, right: 15),
+            padding: EdgeInsets.only(left: 15, top: 30, right: 15),
             child: GestureDetector(
               onTap: () {
                 FocusScope.of(context).unfocus();
@@ -28,8 +28,8 @@ class _EditProfileState extends State<EditProfile> {
                   child: Stack(
                     children: [
                       Container(
-                          width: 200,
-                          height: 200,
+                          width: 170,
+                          height: 170,
                           decoration: BoxDecoration(
                               border: Border.all(width: 4, color: Colors.white),
                               boxShadow: [
@@ -63,15 +63,16 @@ class _EditProfileState extends State<EditProfile> {
                 ),
                 SizedBox(height: 30),
                 buildTextField(
-                  "Full Name",
+                  "Name",
                   "Demon",
                   false,
                 ),
                 buildTextField("NIC", "985341879V", false),
-                buildTextField("Email", "Demon97@gmail.com", false),
-                buildTextField("Password", "********", true),
+                buildTextField("Height", "160cm", false),
+                buildTextField("Weight", "50Kg", false),
+                buildTextField("Blood Group", "B+", false),
                 buildTextField("location", "Sri Lanka", false),
-                SizedBox(height: 30),
+                SizedBox(height: 25),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -84,7 +85,7 @@ class _EditProfileState extends State<EditProfile> {
                               color: Colors.black)),
                       style: OutlinedButton.styleFrom(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 50, vertical: 20),
+                              horizontal: 50, vertical: 18),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30))),
                     ),
@@ -98,7 +99,7 @@ class _EditProfileState extends State<EditProfile> {
                         style: ElevatedButton.styleFrom(
                           primary: Colors.greenAccent,
                           padding: EdgeInsets.symmetric(
-                              horizontal: 50, vertical: 20),
+                              horizontal: 50, vertical: 18),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30)),
                         ))
@@ -113,19 +114,19 @@ class _EditProfileState extends State<EditProfile> {
     return Padding(
         padding: EdgeInsets.only(bottom: 30),
         child: TextField(
-          obscureText: isPasswordtextField ? isObscurePasswordTextField : false,
+          // obscureText: isPasswordtextField ? isObscurePasswordTextField : false,
           decoration: InputDecoration(
               suffixIcon: isPasswordTextField
                   ? IconButton(
                       icon: Icon(Icons.remove_red_eye, color: Colors.grey),
                       onPressed: () {
                         setState(() {
-                          isObscurePasswordTextField =
-                              !isObscurePasswordTextField;
+                          // isObscurePasswordTextField =
+                          //     !isObscurePasswordTextField;
                         });
                       })
                   : null,
-              contentPadding: EdgeInsets.only(bottom: 5),
+              contentPadding: const EdgeInsets.only(bottom: 5),
               labelText: labelText,
               floatingLabelBehavior: FloatingLabelBehavior.always,
               hintText: placeholder,
