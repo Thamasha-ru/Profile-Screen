@@ -6,12 +6,7 @@ class EditProfile extends StatefulWidget {
   _EditProfileState createState() => _EditProfileState();
 }
 
-//get child => null;
-
 class _EditProfileState extends State<EditProfile> {
-  // set isObscurePasswordTextField(_EditProfileState) => true;
-  // get isObscurePasswordTextField => true;
-
   get isPasswordTextField => false;
 
   @override
@@ -46,39 +41,45 @@ class _EditProfileState extends State<EditProfile> {
                           bottom: 0,
                           right: 0,
                           child: Container(
-                            height: 45,
-                            width: 45,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border:
-                                    Border.all(width: 4, color: Colors.white),
-                                color: Colors.greenAccent),
-                            child: Icon(
-                              Icons.edit,
-                              color: Colors.white,
-                            ),
-                          ))
+                              height: 45,
+                              width: 45,
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border:
+                                      Border.all(width: 4, color: Colors.white),
+                                  color: Colors.greenAccent),
+                              child: InkWell(
+                                  child: Icon(
+                                    Icons.edit,
+                                    color: Colors.white,
+                                  ),
+                                  onTap: () {
+                                    print("Edit icon clicked");
+                                    showModalBottomSheet(
+                                        context: context,
+                                        builder: (context) => bottomSheet());
+                                  })))
                     ],
                   ),
                 ),
                 SizedBox(height: 30),
                 buildTextField(
                   "Name",
-                  "Demon",
+                  "Thamasha Ruwanthi",
                   false,
                 ),
-                buildTextField("NIC", "985341879V", false),
-                buildTextField("Height", "160cm", false),
-                buildTextField("Weight", "50Kg", false),
-                buildTextField("Blood Group", "B+", false),
-                buildTextField("location", "Sri Lanka", false),
+                buildTextField("Email", "thamasha@gmail.com", false),
+                buildTextField("Age", "24", false),
+                buildTextField("Gender", "female", false),
+                buildTextField("Region", "Sri Lanka", false),
+                //buildTextField("location", "Sri Lanka", false),
                 SizedBox(height: 25),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     OutlinedButton(
                       onPressed: () {},
-                      child: Text("CANCEL",
+                      child: const Text("CANCEL",
                           style: TextStyle(
                               fontSize: 18,
                               letterSpacing: 2,
@@ -91,7 +92,7 @@ class _EditProfileState extends State<EditProfile> {
                     ),
                     ElevatedButton(
                         onPressed: () {},
-                        child: Text("UPDATE",
+                        child: const Text("UPDATE",
                             style: TextStyle(
                                 fontSize: 18,
                                 letterSpacing: 2,
@@ -137,4 +138,6 @@ class _EditProfileState extends State<EditProfile> {
               )),
         ));
   }
+
+  bottomSheet() {}
 }
